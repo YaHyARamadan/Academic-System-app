@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <string name="app_name">gradu_app</string>
+        <string name="facebook_app_id">560348709937210</string>
+        <string name="fb_login_protocol_scheme">fb3cf3e0cbea9f3f4111e4e5a899927028</string>
+    </resources>

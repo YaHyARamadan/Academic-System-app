@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1326465410",
+    "project_id": "gradu-app-a5653",
+    "storage_bucket": "gradu-app-a5653.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1326465410:android:0017ad8a71855316ce0f9b",
+        "android_client_info": {
+          "package_name": "com.example.gradu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1326465410-l8m0gkidn8kgav3a36ria7iuqth6atcf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gradu",
+            "certificate_hash": "9368c59eb35ce0ce3cdd427bb062a02f38897edb"
+          }
+        },
+        {
+          "client_id": "1326465410-fhfg098judgt92ojggtr36ebuam97voc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnoKzUT377PHySp7Q2VVz9BqHzx7whGTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1326465410-fhfg098judgt92ojggtr36ebuam97voc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
