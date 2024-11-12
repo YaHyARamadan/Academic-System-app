@@ -150,7 +150,7 @@ class RegisterScreen extends StatelessWidget {
                         title: 'Facebook',
                         color: const Color(0xff0C83E8),
                         onTap: () {
-                          provider.signInWithFacebook();
+                          provider.signInWithFacebook(context);
                         },
                       ),
                       const SizedBox(width: 27),
