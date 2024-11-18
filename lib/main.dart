@@ -4,16 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gradu/features/auth_screen/login_screen/view_model/login_provider.dart';
 import 'package:provider/provider.dart';
-
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'core/helper/shared_prefs/cache_helper.dart';
 import 'core/routes/router.dart';
 import 'core/routes/routes.dart';
 import 'features/auth_screen/model/auth_service_provider.dart';
 import 'features/auth_screen/register_screen/view_model/register_provider.dart';
+import 'features/subject_screen/view_model/upload_files_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await Supabase.initialize(
+    url: 'https://yfabdzsoeihhbfmbhwzr.supabase.co',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlmYWJkenNvZWloaGJmbWJod3pyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE5NDY2NzcsImV4cCI6MjA0NzUyMjY3N30.Th3vUsG9q7GFlJHbjl526zKifLeS2HF8VwwXTvu9SIA',
+  );
   CacheHelper.init();
   runApp(const MyApp());
 }
@@ -25,9 +31,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context)=> AuthServiceProvider()),
-        ChangeNotifierProvider(create: (context)=> LoginProvider()),
-        ChangeNotifierProvider(create: (context)=> RegisterProvider()),
+        ChangeNotifierProvider(create: (context) => AuthServiceProvider()),
+        ChangeNotifierProvider(create: (context) => LoginProvider()),
+        ChangeNotifierProvider(create: (context) => RegisterProvider()),
+        ChangeNotifierProvider(create: (context) => UploadFilesProvider()),
       ],
       child: ScreenUtilInit(
           designSize: const Size(360, 690),
@@ -44,18 +51,6 @@ class MyApp extends StatelessWidget {
               title: 'Flutter Demo',
               initialRoute: AppRoutes.splashScreen,
               onGenerateRoute: onGenerate,
-              //
-              // theme: ThemeData(
-              //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              //   useMaterial3: true,
-              //   scaffoldBackgroundColor: Colors.white,
-              // ),
-              // theme: ThemeData(
-              //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              //   useMaterial3: true,
-              //   scaffoldBackgroundColor: Colors.white,
-              // ),
-              // home: const OutroScreen(),
             );
           }),
     );

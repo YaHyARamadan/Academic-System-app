@@ -45,6 +45,14 @@ dependencies:
   flutter_screenutil:
   flutter_facebook_auth: ^7.1.1
   shared_preferences:
+  syncfusion_flutter_pdfviewer: ^26.2.12
+  url_launcher:
+  supabase_flutter: ^2.8.1
+  file_picker: ^8.1.4
+  syncfusion_flutter_pdf: ^26.2.14
+  http: ^1.2.2
+  path_provider: ^2.0.8
+  flutter_pdfview: ^1.3.0
 
 
 dev_dependencies:
@@ -82,6 +90,8 @@ flutter:
       - assets/img/auth_screen/Component 4.svg
       - assets/img/auth_screen/signe-dalerte 1.svg
       - assets/img/auth_screen/vec4 1.svg
+      - assets/img/main_screen/
+      - assets/img/subjects_screen/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
