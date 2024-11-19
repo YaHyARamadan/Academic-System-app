@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../features/subject_screen/view_model/upload_files_provider.dart';
+import '../../view_model/upload_files_provider.dart';
 
 class CustomFloatingButton extends StatelessWidget {
   const CustomFloatingButton({
@@ -19,7 +19,7 @@ class CustomFloatingButton extends StatelessWidget {
     var provider = Provider.of<UploadFilesProvider>(context);
     return FloatingActionButton(
       onPressed: () async {
-        provider.uploadPdf(folderName, listOfUploadedFile, folderType);
+        provider.uploadPdf(folderName, listOfUploadedFile, folderType,context);
       },
       backgroundColor: const Color(0xff11A7A4),
       foregroundColor: Colors.white,

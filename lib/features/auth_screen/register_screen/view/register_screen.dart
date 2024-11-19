@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gradu/features/auth_screen/register_screen/view/widgets/platform_register_button.dart';
 import 'package:gradu/features/auth_screen/register_screen/view_model/register_provider.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/routes/routes.dart';
@@ -95,6 +96,7 @@ class RegisterScreen extends StatelessWidget {
                             CustomTextForm(
                               title: 'Enter Password',
                               hint: 'Enter Your Password',
+                              obscureText: true,
                               textEditingController:
                                   provider.passWordController,
                               textInputType: TextInputType.text,
@@ -216,40 +218,6 @@ class RegisterScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class PlatformRegisterButton extends StatelessWidget {
-  const PlatformRegisterButton({
-    super.key,
-    required this.imgPath,
-    required this.title,
-    required this.color,
-    required this.onTap,
-  });
-
-  final String imgPath;
-  final String title;
-  final GestureTapCallback onTap;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Row(
-        children: [
-          Image.asset(
-            imgPath,
-            scale: 15,
-          ),
-          const SizedBox(width: 2),
-          CustomText(
-              text: title,
-              style: MyTextStyle.kanit24Size400Weight.copyWith(color: color))
-        ],
       ),
     );
   }

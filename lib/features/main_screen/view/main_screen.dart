@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:gradu/core/routes/routes.dart';
 import 'package:gradu/core/style/my_text_style.dart';
 import 'package:gradu/core/widgets/custom_text.dart';
+import 'package:gradu/features/main_screen/view/widgets/subject_container.dart';
 import 'package:gradu/features/subject_screen/view/subject_screen.dart';
+import 'package:provider/provider.dart';
+
+import '../../auth_screen/login_screen/view_model/login_provider.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<LoginProvider>(context);
+
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,11 +35,46 @@ class MainScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.menu,
-                        color: Colors.white,
-                        size: 32,
+                      onPressed: () {
+                        showDialog<void>(
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (BuildContext dialogContext) {
+                            return AlertDialog(
+                              backgroundColor: const Color(0xff11A7A4),
+                              title: CustomText(
+                                text: "Are You Sure You Want To Logout",
+                                style: MyTextStyle.kanit24Size400Weight.copyWith(color: Colors.white),
+                              ),
+                              actions: <Widget>[
+                                TextButton(
+                                  child:  CustomText(
+                                    text: "Cancel",
+                                    style: MyTextStyle.cairo20Size500Weight.copyWith(color: Colors.red),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.of(dialogContext)
+                                        .pop(); // Dismiss alert dialog
+                                  },
+                                ),
+                                TextButton(
+                                  child:  CustomText(
+                                    text: "Sure",
+                                    style: MyTextStyle.cairo20Size500Weight.copyWith(color: Colors.white),
+                                  ),
+                                  onPressed: () {
+                                    provider.logout(context: context);
+                                  },
+                                ),
+                              ],
+                            );
+                          },
+                        );
+
+                      },
+                      icon: Image.asset(
+                        "assets/img/main_screen/logout.png",
+                        scale: 20,
                       ),
                     ),
                     SizedBox(
@@ -132,63 +173,6 @@ class MainScreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.02,
           ),
         ],
-      ),
-    );
-  }
-}
-
-class SubjectContainer extends StatelessWidget {
-  const SubjectContainer(
-      {super.key,
-      required this.imgPath,
-      required this.title,
-      this.scale,
-      this.height,
-      this.height1, });
-
-  final String imgPath;
-  final String title;
-  final double? scale;
-  final double? height;
-  final double? height1;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context)=> SubjectScreen(subjectName: title))
-        );
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Container(
-          width: MediaQuery.of(context).size.width * 0.47,
-          height: MediaQuery.of(context).size.height * 0.25,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: const Color(0xffF2F2F2),
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: height,
-                ),
-                Image.asset(
-                  imgPath,
-                  scale: scale,
-                ),
-                SizedBox(
-                  height: height1,
-                ),
-                CustomText(text: title, style: MyTextStyle.cairo20Size500Weight)
-              ],
-            ),
-          ),
-        ),
       ),
     );
   }

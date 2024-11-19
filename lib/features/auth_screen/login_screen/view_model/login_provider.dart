@@ -21,7 +21,10 @@ class LoginProvider extends ChangeNotifier {
       CacheHelper.putString(key: SharedKey.email, value: email);
 
       await Future.delayed(const Duration(seconds: 3), () {
-        Navigator.of(context).pushReplacementNamed(AppRoutes.outroScreen);
+        Navigator.of(context).pushNamedAndRemoveUntil(
+          AppRoutes.outroScreen,
+          (route) => false,
+        );
       });
     } catch (e) {
       print(e.toString());
@@ -56,7 +59,10 @@ class LoginProvider extends ChangeNotifier {
       );
 
       await Future.delayed(const Duration(seconds: 3), () {
-        Navigator.of(context).pushReplacementNamed(AppRoutes.introScreen);
+        Navigator.of(context).pushNamedAndRemoveUntil(
+          AppRoutes.introScreen,
+          (route) => false,
+        );
       });
     } catch (e) {
       print(e.toString());

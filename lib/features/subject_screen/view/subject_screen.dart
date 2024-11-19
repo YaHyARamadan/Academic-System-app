@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gradu/core/routes/routes.dart';
+import 'package:gradu/features/subject_screen/view/widgets/categories_container.dart';
+import 'package:gradu/features/subject_screen/view_model/navigator_provider.dart';
+import 'package:provider/provider.dart';
 import '../../../core/style/my_text_style.dart';
 import '../../../core/widgets/custom_text.dart';
 
@@ -8,54 +11,9 @@ class SubjectScreen extends StatelessWidget {
 
   final String subjectName;
 
-  lecNavigator(subjectName, context) {
-    switch (subjectName) {
-      case "C++":
-        Navigator.of(context).pushNamed(AppRoutes.cPlusScreen);
-        break;
-      case "Database":
-        Navigator.of(context).pushNamed(AppRoutes.dataBaseScreen);
-        break;
-      case "Linux":
-        Navigator.of(context).pushNamed(AppRoutes.linuxScreen);
-        break;
-      case "    Digital\nEngineering":
-        Navigator.of(context).pushNamed(AppRoutes.digitalScreen);
-        break;
-      case "OS":
-        Navigator.of(context).pushNamed(AppRoutes.osScreen);
-        break;
-      case "Web":
-        Navigator.of(context).pushNamed(AppRoutes.webScreen);
-        break;
-    }
-  }
-
-  tutorialsNavigator(subjectName, context) {
-    switch (subjectName) {
-      case "C++":
-        Navigator.of(context).pushNamed(AppRoutes.cPlusTutorialScreen);
-        break;
-      case "Database":
-        Navigator.of(context).pushNamed(AppRoutes.dataBaseTutorialScreen);
-        break;
-      case "Linux":
-        Navigator.of(context).pushNamed(AppRoutes.linuxTutorialScreen);
-        break;
-      case "    Digital\nEngineering":
-        Navigator.of(context).pushNamed(AppRoutes.digitalTutorialScreen);
-        break;
-      case "OS":
-        Navigator.of(context).pushNamed(AppRoutes.osTutorialScreen);
-        break;
-      case "Web":
-        Navigator.of(context).pushNamed(AppRoutes.webTutorialScreen);
-        break;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
+    var provider=Provider.of<NavigatorProvider>(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Column(
@@ -76,9 +34,11 @@ class SubjectScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       icon: const Icon(
-                        Icons.menu,
+                        Icons.arrow_back_ios_outlined,
                         color: Colors.white,
                         size: 32,
                       ),
@@ -133,7 +93,7 @@ class SubjectScreen extends StatelessWidget {
             title: 'Lectures',
             scale: 1,
             onTap: () {
-              lecNavigator(subjectName, context);
+              provider.lecNavigator(subjectName, context);
             },
           ),
           CategoriesContainer(
@@ -142,7 +102,7 @@ class SubjectScreen extends StatelessWidget {
             title: 'Tutorials',
             scale: 3.3,
             onTap: () {
-              tutorialsNavigator(subjectName, context);
+              provider.tutorialsNavigator(subjectName, context);
             },
           ),
           CategoriesContainer(
@@ -160,55 +120,3 @@ class SubjectScreen extends StatelessWidget {
   }
 }
 
-class CategoriesContainer extends StatelessWidget {
-  const CategoriesContainer({
-    super.key,
-    required this.imgPath,
-    required this.title,
-    this.scale,
-    required this.onTap,
-  });
-
-  final String imgPath;
-  final String title;
-  final double? scale;
-  final GestureTapCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Container(
-          width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height * 0.2,
-          decoration: BoxDecoration(
-              color: const Color(0xffF2F2F4),
-              borderRadius: BorderRadius.circular(25)),
-          child: Row(
-            children: [
-              Image.asset(
-                imgPath,
-                scale: scale,
-              ),
-              const VerticalDivider(
-                thickness: 0.4,
-                color: Colors.black,
-                indent: 20,
-                endIndent: 20,
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              CustomText(
-                  text: title,
-                  style: MyTextStyle.kanit24Size400Weight
-                      .copyWith(fontWeight: FontWeight.w600))
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}

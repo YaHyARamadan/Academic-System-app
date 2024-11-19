@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradu/core/style/my_text_style.dart';
-import 'package:gradu/core/widgets/pdf_viewer.dart';
-import 'custom_text.dart';
+import '../../../../core/widgets/custom_text.dart';
 
 class CustomCard extends StatefulWidget {
   final String title;
@@ -18,7 +17,8 @@ class CustomCard extends StatefulWidget {
     required this.imagePath,
     required this.scale,
     this.pdfPath,
-    this.titleAppbar,  this.onTap,
+    this.titleAppbar,
+    this.onTap,
   });
 
   @override

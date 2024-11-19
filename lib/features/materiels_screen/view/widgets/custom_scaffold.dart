@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradu/core/style/my_text_style.dart';
-import 'custom_text.dart';
+import '../../../../core/widgets/custom_text.dart';
 
 class CustomScaffold extends StatelessWidget {
   const CustomScaffold({
@@ -86,11 +86,9 @@ class CustomScaffold extends StatelessWidget {
             height: 10,
           ),
           Flexible(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  ...bodyWidgets, const SizedBox(height: 10)],
-              ),
+            child: Column(
+              children: [
+                ...bodyWidgets, const SizedBox(height: 10)],
             ),
           ),
         ],

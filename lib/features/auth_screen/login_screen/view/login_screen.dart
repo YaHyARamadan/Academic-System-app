@@ -43,6 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomTextForm(
                     title: 'Enter Password',
                     hint: 'Enter Your Password',
+                    obscureText: true,
                     textEditingController: provider.passWordController,
                     textInputType: TextInputType.text,
                   ),
@@ -50,6 +51,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.centerLeft,
                     child: InkWell(
                       onTap: () {
+                        provider.emailController.clear();
+                        provider.passWordController.clear();
                         forgetPasswordSheet(mediaWidth, mediaHeight, context);
                       },
                       child: Padding(

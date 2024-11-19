@@ -24,7 +24,10 @@ class RegisterProvider extends ChangeNotifier {
       CacheHelper.putString(key: SharedKey.email, value: email);
 
       await Future.delayed(const Duration(seconds: 3), () {
-        Navigator.of(context).pushReplacementNamed(AppRoutes.outroScreen);
+        Navigator.of(context).pushNamedAndRemoveUntil(
+          AppRoutes.outroScreen,
+          (route) => false,
+        );
       });
     } catch (e) {
       ScaffoldMessenger.of(context)
@@ -52,7 +55,10 @@ class RegisterProvider extends ChangeNotifier {
       CacheHelper.putBool(key: SharedKey.isLoggedIn, value: true);
       CacheHelper.putString(key: SharedKey.email, value: googleUser.email);
 
-      Navigator.of(context).pushReplacementNamed(AppRoutes.outroScreen);
+      Navigator.of(context).pushNamedAndRemoveUntil(
+        AppRoutes.outroScreen,
+        (route) => false,
+      );
     } catch (e) {
       print(e);
       ScaffoldMessenger.of(context).showSnackBar(

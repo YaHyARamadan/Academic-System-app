@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../core/themes/app_assets.dart';
-import '../../core/widgets/custom_card.dart';
-import '../../core/widgets/custom_floating_button.dart';
-import '../../core/widgets/custom_scaffold.dart';
-import '../subject_screen/view_model/upload_files_provider.dart';
+import '../../../core/themes/app_assets.dart';
+import 'widgets/custom_card.dart';
+import 'widgets/custom_floating_button.dart';
+import 'widgets/custom_scaffold.dart';
+import '../view_model/upload_files_provider.dart';
 
 class DigitalScreen extends StatelessWidget {
   const DigitalScreen({super.key});
@@ -34,7 +34,7 @@ class DigitalScreen extends StatelessWidget {
               return CustomCard(
                 title: "Chapter ${index + 1}",
                 imagePath: AppAssets.digitalEnginnerAsset,
-                scale: 30,
+                scale: 10,
                 onTap: () => provider.openPdf(
                     file['url']!, context, "Chapter ${index + 1}"),
               );
@@ -73,7 +73,7 @@ class DigitalTutorialScreen extends StatelessWidget {
               return CustomCard(
                 title: "Tutorial ${index + 1}",
                 imagePath: AppAssets.digitalEnginnerAsset,
-                scale: 30,
+                scale: 10,
                 onTap: () => provider.openPdf(
                     file['url']!, context, "Tutorial ${index + 1}"),
               );

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../core/themes/app_assets.dart';
-import '../../core/widgets/custom_card.dart';
-import '../../core/widgets/custom_floating_button.dart';
-import '../../core/widgets/custom_scaffold.dart';
-import '../subject_screen/view_model/upload_files_provider.dart';
+import '../../../core/themes/app_assets.dart';
+import 'widgets/custom_card.dart';
+import 'widgets/custom_floating_button.dart';
+import 'widgets/custom_scaffold.dart';
+import '../view_model/upload_files_provider.dart';
 
 class CPlusScreen extends StatelessWidget {
   const CPlusScreen({super.key});

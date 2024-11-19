@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:gradu/core/routes/routes.dart';
 import 'package:gradu/features/assigmment_screen/view/assigment_screen.dart';
-import 'package:gradu/features/lectures_screen/view/lectures_screen.dart';
-import 'package:gradu/features/materiels_screen/c_plus_screen.dart';
-import 'package:gradu/features/materiels_screen/data_base_screen.dart';
-import 'package:gradu/features/materiels_screen/digital_screen.dart';
-import 'package:gradu/features/materiels_screen/linux_screen.dart';
-import 'package:gradu/features/materiels_screen/os_screen.dart';
-import 'package:gradu/features/materiels_screen/web_scren.dart';
+import 'package:gradu/features/materiels_screen/view/c_plus_screen.dart';
+import 'package:gradu/features/materiels_screen/view/data_base_screen.dart';
+import 'package:gradu/features/materiels_screen/view/digital_screen.dart';
+import 'package:gradu/features/materiels_screen/view/linux_screen.dart';
+import 'package:gradu/features/materiels_screen/view/web_scren.dart';
 import '../../features/auth_screen/login_screen/view/login_screen.dart';
 import '../../features/auth_screen/register_screen/view/register_screen.dart';
 import '../../features/intro_screen/view/intro_screen.dart';
 import '../../features/main_screen/view/main_screen.dart';
+import '../../features/materiels_screen/view/os_screen.dart';
 import '../../features/outro_screen/view/outro_screen.dart';
 import '../../features/splash_screen/view/splash_screen.dart';
 import '../../features/subject_screen/view/subject_screen.dart';
@@ -40,10 +39,7 @@ Route<dynamic> onGenerate(RouteSettings routeSettings) {
       return MaterialPageRoute(
           builder: (context) => const MainScreen(), settings: routeSettings);
 
-    case AppRoutes.lecturesScreen:
-      return MaterialPageRoute(
-          builder: (context) => const LecturesScreen(),
-          settings: routeSettings);
+
 
     case AppRoutes.cPlusScreen:
       return MaterialPageRoute(

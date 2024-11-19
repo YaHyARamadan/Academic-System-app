@@ -46,8 +46,7 @@ class OutroScreen extends StatelessWidget {
           const SizedBox(height: 30),
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(AppRoutes.mainScreen);
-
+              Navigator.of(context).pushReplacementNamed(AppRoutes.mainScreen);
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.teal,
