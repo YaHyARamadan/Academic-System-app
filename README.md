@@ -1,16 +1,59 @@
-# gradu
+# IT HUB APP
 
-A new Flutter project.
+A Graduation Project
 
-## Getting Started
+### Overview
 
-This project is a starting point for a Flutter application.
+The IT HUB App is designed to provide users with an integrated platform for managing academic tasks. Users can view and upload assignments, watch and download lectures, and access tutorials. The app also includes an admin dashboard where administrators can upload lectures and tutorials for users.
 
-A few resources to get you started if this is your first Flutter project:
+# Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### User Features
+
+•  **Assignment Management:**\
+     •  View uploaded assignments.\
+     •  Upload assignments directly to the system.
+     
+•    **Lecture & Tutorial Access:**\
+•  View and download lectures to the device.\
+•  Access tutorials uploaded by the admin.
+
+•    **Authentication:**\
+•  Register using Google, Facebook, or email.\
+•  Log in using email and password.\
+•  Forgot Password: Receive an email to reset the password and set a new one.
+
+### •Admin Features
+
+**•Content Upload:**\
+• Upload lectures and tutorials for users.
+
+• **Content Management:**\
+• All uploaded materials can be viewed and managed by admins.\
+• Technologies Used
+## Backend Services
+
+**•Firebase Authentication:**\
+•User registration, login, and password recovery.
+
+**•Supabase Storage:**\
+•Upload and manage files with support for operations like `insert` and `select`.
+
+## How to Use
+**Registration & Login:**
+
+•Use your Google, Facebook, or email to register and log in.\
+•If you forget your password, use the "Forgot Password" option to reset it.
+
+**For Users:**
+
+•Navigate to the Assignments section to upload or view assignments.\
+•Access the Lectures section to view or download available content.\
+•Visit the Tutorials section for additional resources.
+
+**For Admins:**
+
+•Upload lectures and tutorials via the admin dashboard.\
+•Manage existing content efficiently.
