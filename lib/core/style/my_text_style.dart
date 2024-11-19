@@ -22,5 +22,4 @@ class MyTextStyle {
     fontSize: 20,
     fontWeight: FontWeight.w500,
   );
-
 }

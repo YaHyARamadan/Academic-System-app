@@ -39,9 +39,7 @@ Route<dynamic> onGenerate(RouteSettings routeSettings) {
     case AppRoutes.mainScreen:
       return MaterialPageRoute(
           builder: (context) => const MainScreen(), settings: routeSettings);
-    // case AppRoutes.subjectScreen:
-    //   return MaterialPageRoute(
-    //       builder: (context) => const SubjectScreen(), settings: routeSettings);
+
     case AppRoutes.lecturesScreen:
       return MaterialPageRoute(
           builder: (context) => const LecturesScreen(),
@@ -67,29 +65,34 @@ Route<dynamic> onGenerate(RouteSettings routeSettings) {
       return MaterialPageRoute(
           builder: (context) => const OsScreen(), settings: routeSettings);
 
-
     case AppRoutes.cPlusTutorialScreen:
       return MaterialPageRoute(
-          builder: (context) => const CPlusTutorialScreen(), settings: routeSettings);
+          builder: (context) => const CPlusTutorialScreen(),
+          settings: routeSettings);
     case AppRoutes.dataBaseTutorialScreen:
       return MaterialPageRoute(
           builder: (context) => const DataBaseTutorialScreen(),
           settings: routeSettings);
     case AppRoutes.digitalTutorialScreen:
       return MaterialPageRoute(
-          builder: (context) => const DigitalTutorialScreen(), settings: routeSettings);
+          builder: (context) => const DigitalTutorialScreen(),
+          settings: routeSettings);
     case AppRoutes.webTutorialScreen:
       return MaterialPageRoute(
-          builder: (context) => const WebTutorialScreen(), settings: routeSettings);
+          builder: (context) => const WebTutorialScreen(),
+          settings: routeSettings);
     case AppRoutes.linuxTutorialScreen:
       return MaterialPageRoute(
-          builder: (context) => const LinuxTutorialScreen(), settings: routeSettings);
+          builder: (context) => const LinuxTutorialScreen(),
+          settings: routeSettings);
     case AppRoutes.osTutorialScreen:
       return MaterialPageRoute(
-          builder: (context) => const OsTutorialScreen(), settings: routeSettings);
+          builder: (context) => const OsTutorialScreen(),
+          settings: routeSettings);
     case AppRoutes.assignmentScreen:
       return MaterialPageRoute(
-          builder: (context) => const AssignmentScreen(), settings: routeSettings);
+          builder: (context) => const AssignmentScreen(),
+          settings: routeSettings);
     default:
       return MaterialPageRoute(
           builder: (context) => const IntroScreen(), settings: routeSettings);

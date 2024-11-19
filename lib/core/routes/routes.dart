@@ -11,8 +11,6 @@ class AppRoutes {
   static const String subjectScreen = "SubjectScreen";
   static const String lecturesScreen = "LecturesScreen";
 
-
-
   static const String cPlusScreen = "CPlusScreen";
   static const String dataBaseScreen = "DataBaseScreen";
   static const String digitalScreen = "DigitalScreen";
@@ -27,7 +25,4 @@ class AppRoutes {
   static const String osTutorialScreen = "OsTutorialScreen";
   static const String webTutorialScreen = "WebTutorialScreen";
   static const String assignmentScreen = "AssignmentScreen";
-
-
-
 }

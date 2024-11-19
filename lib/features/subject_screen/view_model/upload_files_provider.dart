@@ -18,6 +18,7 @@ class UploadFilesProvider extends ChangeNotifier {
   List<Map<String, String>> uploadedLinuxTuPdf = [];
   List<Map<String, String>> uploadedWebPdf = [];
   List<Map<String, String>> uploadedWebTuPdf = [];
+  List<Map<String, String>> uploadedAssignment = [];
 
   openPdf(String pdfUrl, context, title) {
     Navigator.push(

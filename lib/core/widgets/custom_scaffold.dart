@@ -86,9 +86,11 @@ class CustomScaffold extends StatelessWidget {
             height: 10,
           ),
           Flexible(
-            child: Column(
-              children: [
-                ...bodyWidgets, const SizedBox(height: 10)],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  ...bodyWidgets, const SizedBox(height: 10)],
+              ),
             ),
           ),
         ],
