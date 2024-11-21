@@ -58,4 +58,4 @@ The IT HUB App is designed to provide users with an integrated platform for mana
 •Upload lectures and tutorials via the admin dashboard.\
 •Manage existing content efficiently.
 
-![Uploading Shot (7).png…]()
+
