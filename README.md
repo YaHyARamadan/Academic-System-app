@@ -1,10 +1,10 @@
-# IT HUB APP
+# Academic System app:
 
 A Graduation Project
 
 ### Overview
 
-The IT HUB App is designed to provide users with an integrated platform for managing academic tasks. Users can view and upload assignments, watch and download lectures, and access tutorials. The app also includes an admin dashboard where administrators can upload lectures and tutorials for users.
+The Academic System app: is designed to provide users with an integrated platform for managing academic tasks. Users can view and upload assignments, watch and download lectures, and access tutorials. The app also includes an admin dashboard where administrators can upload lectures and tutorials for users.
 
 # Features
 
