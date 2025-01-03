@@ -1,4 +1,4 @@
-# Academic System app:
+# Academic System app
 
 A Graduation Project
 
